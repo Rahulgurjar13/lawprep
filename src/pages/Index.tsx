@@ -18,19 +18,23 @@ import WhatsAppButton from "@/components/landing/WhatsAppButton";
 const Index = () => {
   return (
     <div className="min-h-screen font-body pb-14 lg:pb-0">
-      <TopBar />
-      <Navbar />
-      <HeroSection />
-      <CoursesSection />
-      <ExamsSection />
-      <WhyChooseUs />
-      <StatsSection />
-      <ScholarshipSection />
-      <CentersSection />
-      <TestimonialsSection />
-      <ParentFeatures />
-      <DemoCTA />
-      <BrochureDownload />
+      <header role="banner">
+        <TopBar />
+        <Navbar />
+      </header>
+      <main id="main-content" role="main">
+        <HeroSection />
+        <CoursesSection />
+        <ExamsSection />
+        <WhyChooseUs />
+        <StatsSection />
+        <ScholarshipSection />
+        <CentersSection />
+        <TestimonialsSection />
+        <ParentFeatures />
+        <DemoCTA />
+        <BrochureDownload />
+      </main>
       <Footer />
       <MobileBottomBar />
       <WhatsAppButton />

@@ -34,11 +34,15 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-[70px]">
         {/* Logo — Yellow box style */}
-        <a href="#" className="flex items-center shrink-0">
+        <a href="/" className="flex items-center shrink-0" title="Law Prep Tutorial — Home" aria-label="Law Prep Tutorial Home">
           <img
             src="/images/Picture1.png"
-            alt="Law Prep Tutorial"
+            alt="Law Prep Tutorial — Best 3-Year LLB Coaching in Delhi NCR"
+            title="Law Prep Tutorial"
             className="h-20 md:h-24 w-auto object-contain"
+            fetchPriority="high"
+            width="180"
+            height="96"
           />
         </a>
 
