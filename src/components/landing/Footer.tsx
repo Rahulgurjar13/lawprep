@@ -3,8 +3,8 @@ import { Phone } from "lucide-react";
 const quickLinks = ["Law Entrance", "Judiciary", "Free Resources", "Centers"];
 const centers = [
   { name: "South Delhi", phone: "+91-9289485506" },
-  { name: "Gurugram", phone: "+91-9289485501" },
-  { name: "North Delhi", phone: "+91-9289485503" },
+  { name: "Gurugram", phone: "+91-9289485503" },
+  { name: "GTB Nagar (North Delhi)", phone: "+91-9289485501" },
   { name: "Noida", phone: "+91-9289485508" },
 ];
 

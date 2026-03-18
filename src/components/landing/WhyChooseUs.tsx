@@ -11,7 +11,7 @@ const features = [
   {
     icon: Building2,
     title: "Prime Infrastructure",
-    text: "State-of-the-art classrooms across 4 centers in Delhi NCR — Hauz Khas, Gurugram, Mukherjee Nagar, and Noida.",
+    text: "State-of-the-art classrooms across 4 centers in Delhi NCR — Hauz Khas, Gurugram, GTB Nagar, and Noida.",
     color: "bg-red-100 text-primary",
   },
   {
@@ -35,7 +35,7 @@ const features = [
   {
     icon: User,
     title: "Personalised Preparation",
-    text: "1:1 mentorship tailored to your strengths and weak areas, with AI-powered performance tracking.",
+    text: "1:1 mentorship tailored to your strengths and weak areas.",
     color: "bg-green-100 text-green-600",
   },
 ];

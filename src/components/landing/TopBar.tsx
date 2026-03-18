@@ -1,10 +1,10 @@
 import { Phone } from "lucide-react";
 
 const centers = [
-  { area: "South Delhi", phone: "+91-9289485506" },
-  { area: "Gurugram", phone: "+91-9289485501" },
-  { area: "North Delhi", phone: "+91-9289485503" },
-  { area: "Noida", phone: "+91-9289485508" },
+  { area: "South Delhi", phone: "+91-8750581505" },
+  { area: "Gurugram", phone: "+91-8750581505" },
+  { area: "North Delhi", phone: "+91-8750581505" },
+  { area: "Noida", phone: "+91-8750581505" },
 ];
 
 const TopBar = () => {
@@ -12,9 +12,9 @@ const TopBar = () => {
     <div className="bg-primary text-primary-foreground py-1.5 text-xs font-body">
       <div className="container mx-auto px-4 flex items-center justify-center gap-1 md:gap-4 flex-wrap">
         {/* Mobile: show only first number */}
-        <a href="tel:+919289485506" className="flex items-center gap-1 md:hidden">
+        <a href="tel:+918750581505" className="flex items-center gap-1 md:hidden">
           <Phone className="w-3 h-3" />
-          <span>📞 +91-9289485506</span>
+          <span>📞 +91-8750581505</span>
         </a>
         {/* Desktop: show all */}
         <div className="hidden md:flex items-center gap-3 text-xs">

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Star, Calendar, Clock, Users, Zap } from "lucide-react";
+import { Star, Calendar, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const courses = [
@@ -149,11 +149,7 @@ const CoursesSection = () => {
                       {c.target}
                     </span>
                   </div>
-                  <p className="flex items-center gap-1 text-xs text-red-500 font-semibold font-body">
-                    <Zap className="w-3 h-3" />
-                    Only 12 seats left in this batch
-                  </p>
-                </div>
+                  </div>
                 <Button className="shrink-0 bg-primary text-white hover:bg-primary/90 rounded-none font-bold text-sm h-9 px-5 shadow-none">
                   Explore Now →
                 </Button>

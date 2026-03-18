@@ -23,7 +23,7 @@ const HeroSection = () => {
               transition={{ delay: 0.1 }}
               className="inline-flex items-center gap-2 bg-red-50 border border-red-200 text-primary text-xs md:text-sm font-semibold px-4 py-1.5 font-body"
             >
-              🏆 India's #1 3-Year LLB Coaching | Delhi NCR
+              🏆 India's #1st, 3-Year LLB Coaching | Delhi NCR
             </motion.div>
 
             <motion.h1
@@ -42,9 +42,7 @@ const HeroSection = () => {
               transition={{ delay: 0.3 }}
               className="font-body text-gray-600 text-sm md:text-[15px] leading-relaxed max-w-xl"
             >
-              Planning to pursue a 3-Year LLB degree from top law colleges like NLS Bangalore,
-              Campus Law Centre Delhi, or Symbiosis Pune? Start your preparation with Law Prep
-              Tutorial — experienced faculty, structured curriculum, and guaranteed results.
+              Planning to pursue a 3-Year LLB degree from top law colleges like NLSIU Bengaluru, Faculty of Law (DU), or Symbiosis Pune? Start your preparation with Law Prep Tutorial — experienced faculty, structured curriculum, and guaranteed results.
             </motion.p>
 
             <motion.div

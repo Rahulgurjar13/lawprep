@@ -2,10 +2,34 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, ExternalLink } from "lucide-react";
 
 const centers = [
-  { name: "South Delhi", area: "Hauz Khas", phone: "+91-9289485506", address: "Hauz Khas, South Delhi", maps: "https://maps.google.com/?q=Hauz+Khas+Delhi" },
-  { name: "Gurugram", area: "Sector 14", phone: "+91-9289485501", address: "Sector 14, Gurugram", maps: "https://maps.google.com/?q=Sector+14+Gurugram" },
-  { name: "North Delhi", area: "Mukherjee Nagar", phone: "+91-9289485503", address: "Mukherjee Nagar, North Delhi", maps: "https://maps.google.com/?q=Mukherjee+Nagar+Delhi" },
-  { name: "Noida", area: "Sector 62", phone: "+91-9289485508", address: "Sector 62, Noida", maps: "https://maps.google.com/?q=Sector+62+Noida" },
+  {
+    name: "South Delhi",
+    area: "Hauz Khas, South Delhi",
+    phone: "+91-9289485506",
+    address: "Second Floor, 14, near Vadilal Hangout, Kaushalya Park, Hauz Khas, New Delhi, Delhi 110016",
+    maps: "https://share.google/D2iw8UZ0SqzOLhDcQ",
+  },
+  {
+    name: "Gurugram",
+    area: "Sector 14, Gurugram",
+    phone: "+91-9289485503",
+    address: "M-35, Second Floor, above HDFC Bank, Block M, Old DLF Colony, Sector 14, Gurugram, Haryana 122007",
+    maps: "https://share.google/6brsGcIzOIp9uxjDL",
+  },
+  {
+    name: "North Delhi",
+    area: "GTB Nagar, North Delhi",
+    phone: "+91-9289485501",
+    address: "Metro Gate No. 1, upstairs Bank of Baroda, 73-75, Ring Road, Mall Road, GTB Nagar, New Delhi, Delhi 110033",
+    maps: "https://share.google/j26hjq5H1UrwFmwXi",
+  },
+  {
+    name: "Noida",
+    area: "Sector 62, Noida",
+    phone: "+91-9289485508",
+    address: "Ground Floor, Sandesh Tower, C-56/31, C Block, Phase 2, Sector 62, Noida, Uttar Pradesh 201309",
+    maps: "https://share.google/rxgMdmBk43lflPFr3",
+  },
 ];
 
 const CentersSection = () => {

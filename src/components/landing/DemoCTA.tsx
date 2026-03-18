@@ -25,11 +25,11 @@ const DemoCTA = () => {
                 Book Your Spot Now
               </Button>
               <a
-                href="tel:+919289485506"
+                href="tel:+918750581505"
                 className="flex items-center gap-1.5 text-sm font-body font-semibold text-gray-500 hover:text-primary transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
-                +91-9289485506
+                +91-8750581505
               </a>
             </div>
           </div>
