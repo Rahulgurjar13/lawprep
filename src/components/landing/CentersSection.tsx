@@ -41,9 +41,7 @@ const CentersSection = () => {
             </motion.div>
           ))}
         </div>
-        <div className="mt-10 max-w-3xl mx-auto bg-gray-50 border border-gray-100 h-44 flex items-center justify-center">
-          <p className="font-body text-gray-400 text-sm">📍 Delhi NCR — 4 Centers</p>
-        </div>
+
       </div>
     </section>
   );

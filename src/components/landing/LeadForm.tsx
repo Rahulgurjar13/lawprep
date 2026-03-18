@@ -3,6 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Lock, CheckCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const locations = ["South Delhi", "Gurugram", "North Delhi", "Noida", "Other"];
 const courses = ["NLSAT-LLB", "CUET PG-LLB", "MH CET", "Other"];
@@ -93,29 +100,33 @@ const LeadForm = ({ onSuccess, className = "" }: LeadFormProps) => {
           {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
         </div>
         <div>
-          <select
-            value={form.location}
-            onChange={(e) => setForm({ ...form, location: e.target.value })}
-            className="w-full h-11 border border-gray-200 bg-white px-3 text-sm text-gray-700 font-body focus:outline-none focus:border-primary"
-          >
-            <option value="">You're currently in</option>
-            {locations.map((l) => (
-              <option key={l} value={l}>{l}</option>
-            ))}
-          </select>
+          <Select value={form.location || undefined} onValueChange={(val) => setForm({ ...form, location: val })}>
+            <SelectTrigger className="w-full h-11 rounded-none border-gray-200 bg-white font-body focus:ring-0 focus:border-primary shadow-none text-sm text-gray-700">
+              <SelectValue placeholder="You're currently in" />
+            </SelectTrigger>
+            <SelectContent className="rounded-none bg-white font-body">
+              {locations.map((l) => (
+                <SelectItem key={l} value={l} className="cursor-pointer">
+                  {l}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           {errors.location && <p className="text-red-500 text-xs mt-1">{errors.location}</p>}
         </div>
         <div>
-          <select
-            value={form.course}
-            onChange={(e) => setForm({ ...form, course: e.target.value })}
-            className="w-full h-11 border border-gray-200 bg-white px-3 text-sm text-gray-700 font-body focus:outline-none focus:border-primary"
-          >
-            <option value="">Course interested in</option>
-            {courses.map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
-          </select>
+          <Select value={form.course || undefined} onValueChange={(val) => setForm({ ...form, course: val })}>
+            <SelectTrigger className="w-full h-11 rounded-none border-gray-200 bg-white font-body focus:ring-0 focus:border-primary shadow-none text-sm text-gray-700">
+              <SelectValue placeholder="Course interested in" />
+            </SelectTrigger>
+            <SelectContent className="rounded-none bg-white font-body">
+              {courses.map((c) => (
+                <SelectItem key={c} value={c} className="cursor-pointer">
+                  {c}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
           {errors.course && <p className="text-red-500 text-xs mt-1">{errors.course}</p>}
         </div>
         <Button

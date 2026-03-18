@@ -5,8 +5,8 @@ const DemoCTA = () => {
   return (
     <section className="py-14 md:py-20 bg-amber-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto bg-white border border-amber-100 shadow-sm p-8 md:p-10 flex flex-col md:flex-row items-center gap-6">
-          <div className="flex-1">
+        <div className="max-w-4xl mx-auto bg-white border border-amber-100 shadow-sm flex flex-col md:flex-row items-stretch">
+          <div className="flex-1 p-8 md:p-10 flex flex-col justify-center items-start">
             <h2 className="font-heading text-gray-900 mb-3" style={{ fontWeight: 900 }}>
               Book Your Free Demo Class Now!
             </h2>
@@ -22,8 +22,8 @@ const DemoCTA = () => {
               Book Your Spot Now
             </Button>
           </div>
-          <div className="w-44 h-32 bg-amber-100 flex items-center justify-center shrink-0">
-            <BookOpen className="w-14 h-14 text-amber-400" />
+          <div className="w-full md:w-5/12 shrink-0 relative min-h-[200px] md:min-h-full bg-cover">
+            <img src="/images/law_books.png" alt="Law books and gavel" className="absolute inset-0 w-full h-full object-cover" />
           </div>
         </div>
       </div>

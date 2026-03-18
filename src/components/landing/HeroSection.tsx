@@ -1,14 +1,7 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LeadForm from "./LeadForm";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 
 const trustBadges = [
   { icon: "⭐", text: "4.9 Rated" },
@@ -18,8 +11,6 @@ const trustBadges = [
 ];
 
 const HeroSection = () => {
-  const [formOpen, setFormOpen] = useState(false);
-
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="container mx-auto px-4 py-10 md:py-16 lg:py-20">
@@ -65,8 +56,7 @@ const HeroSection = () => {
               <Button
                 onClick={() => {
                   const el = document.getElementById("hero-form");
-                  if (el) el.scrollIntoView({ behavior: "smooth" });
-                  else setFormOpen(true);
+                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
                 className="bg-primary text-white rounded-none h-11 px-6 text-sm font-bold hover:bg-primary/90 shadow-none"
               >
@@ -117,32 +107,25 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* RIGHT — Form (desktop) */}
-          <div className="hidden lg:block">
-            <LeadForm className="sticky top-24" />
+          {/* RIGHT — Form (all devices) */}
+          <div id="hero-form" className="w-full lg:sticky lg:top-24 mt-8 lg:mt-0">
+            <LeadForm />
           </div>
         </div>
       </div>
 
-      {/* Mobile form CTA */}
-      <div className="lg:hidden fixed bottom-16 left-0 right-0 z-40 px-4 pb-2">
+      {/* Mobile form CTA - Floating */}
+      <div className="lg:hidden fixed bottom-16 left-0 right-0 z-40 px-4 pb-2 pointer-events-none">
         <Button
-          onClick={() => setFormOpen(true)}
-          className="w-full h-11 rounded-none bg-primary text-white text-sm font-bold shadow-none"
+          onClick={() => {
+            const el = document.getElementById("hero-form");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          className="w-full h-11 rounded-none bg-primary text-white text-sm font-bold shadow-none pointer-events-auto shadow-md"
         >
           📝 Get Free Counselling
         </Button>
       </div>
-
-      {/* Mobile form modal */}
-      <Dialog open={formOpen} onOpenChange={setFormOpen}>
-        <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto rounded-none">
-          <DialogHeader>
-            <DialogTitle className="font-heading text-gray-900">Get Free Counselling</DialogTitle>
-          </DialogHeader>
-          <LeadForm onSuccess={() => setTimeout(() => setFormOpen(false), 2000)} />
-        </DialogContent>
-      </Dialog>
     </section>
   );
 };

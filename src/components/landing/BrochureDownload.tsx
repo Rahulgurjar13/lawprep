@@ -1,7 +1,24 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import LeadForm from "./LeadForm";
 
 const BrochureDownload = () => {
+  const [formOpen, setFormOpen] = useState(false);
+
+  const handleSuccess = () => {
+    setTimeout(() => {
+      setFormOpen(false);
+      const a = document.createElement("a");
+      a.href = "/brochure.pdf";
+      a.download = "Law_Prep_Brochure.pdf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, 2000); // Give time for the success state in LeadForm to show
+  };
+
   return (
     <section className="py-14 md:py-20 bg-white">
       <div className="container mx-auto px-4 text-center">
@@ -12,6 +29,7 @@ const BrochureDownload = () => {
           Download the complete brochure for courses, fees, scholarships, and success stats.
         </p>
         <Button
+          onClick={() => setFormOpen(true)}
           variant="outline"
           className="border-primary text-primary hover:bg-primary hover:text-white rounded-none px-6 h-10 font-bold text-sm transition-colors shadow-none"
         >
@@ -19,6 +37,16 @@ const BrochureDownload = () => {
           Download Brochure
         </Button>
       </div>
+
+      <Dialog open={formOpen} onOpenChange={setFormOpen}>
+        <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto rounded-none p-0 border-none bg-transparent">
+          <DialogHeader className="sr-only">
+            <DialogTitle>Download Brochure</DialogTitle>
+            <DialogDescription>Please fill the form to instantly download the brochure.</DialogDescription>
+          </DialogHeader>
+          <LeadForm onSuccess={handleSuccess} />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
