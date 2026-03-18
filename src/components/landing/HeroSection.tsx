@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,19 @@ const trustBadges = [
 ];
 
 const HeroSection = () => {
+  const [viewers, setViewers] = useState(() => Math.floor(Math.random() * 25) + 38);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setViewers((prev) => {
+        const delta = Math.random() < 0.5 ? 1 : -1;
+        const next = prev + delta;
+        return Math.min(72, Math.max(31, next));
+      });
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative overflow-hidden bg-white">
       <div className="container mx-auto px-4 py-10 md:py-16 lg:py-20">
@@ -101,7 +115,7 @@ const HeroSection = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              47 students viewing this page right now
+              {viewers} students viewing this page right now
             </motion.div>
           </div>
 

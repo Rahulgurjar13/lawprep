@@ -59,7 +59,12 @@ const CentersSection = () => {
               <a href={`tel:${c.phone.replace(/-/g, "")}`} className="flex items-center gap-1.5 text-sm font-body font-semibold text-primary hover:underline mb-2">
                 <Phone className="w-3.5 h-3.5" /> {c.phone}
               </a>
-              <a href={c.maps} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-body text-gray-500 hover:text-primary transition-colors">
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(c.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-sm font-body font-semibold text-primary hover:underline transition-colors"
+              >
                 Get Directions <ExternalLink className="w-3 h-3" />
               </a>
             </motion.div>

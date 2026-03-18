@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import { BarChart3, ClipboardList, UserCheck, FileText, Bell, CalendarDays } from "lucide-react";
+import { ClipboardList, UserCheck, FileText, Bell, CalendarDays, Phone } from "lucide-react";
 
 const features = [
-  { icon: BarChart3, title: "Dedicated Parent Portal", text: "Track progress and test scores", color: "bg-blue-100 text-blue-600" },
   { icon: ClipboardList, title: "Mock Test Insights", text: "Detailed performance reports", color: "bg-orange-100 text-orange-600" },
   { icon: UserCheck, title: "Personalized Teacher Feedback", text: "Section-wise feedback", color: "bg-green-100 text-green-600" },
   { icon: FileText, title: "Exclusive Mentorship Reports", text: "NLU student insights", color: "bg-purple-100 text-purple-600" },
   { icon: Bell, title: "Daily Attendance Notifications", text: "Stay updated always", color: "bg-red-100 text-primary" },
   { icon: CalendarDays, title: "Monthly PTMs", text: "Monthly faculty meetings for strategy", color: "bg-yellow-100 text-yellow-600" },
+  { icon: Phone, title: "Parent Helpline Support", text: "Dedicated number to reach faculty & admin anytime", color: "bg-blue-100 text-blue-600" },
 ];
 
 const ParentFeatures = () => {

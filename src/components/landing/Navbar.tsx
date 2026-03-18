@@ -35,23 +35,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-[70px]">
         {/* Logo — Yellow box style */}
         <a href="#" className="flex items-center shrink-0">
-          <div
-            className="flex flex-col items-center justify-center px-2.5 py-1.5"
-            style={{ background: "#FFD600" }}
-          >
-            <span
-              className="font-heading leading-tight tracking-tight"
-              style={{ fontFamily: "Nunito, sans-serif", fontWeight: 900, fontSize: "13px", color: "#b91c1c" }}
-            >
-              LAW PREP
-            </span>
-            <span
-              className="font-body leading-tight tracking-widest uppercase"
-              style={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "7px", color: "#1f2937" }}
-            >
-              Tutorial
-            </span>
-          </div>
+          <img
+            src="/images/Picture1.png"
+            alt="Law Prep Tutorial"
+            className="h-20 md:h-24 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop nav */}

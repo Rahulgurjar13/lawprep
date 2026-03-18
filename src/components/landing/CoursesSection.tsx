@@ -2,45 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Star, Calendar, Clock, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { courses } from "@/data/courseData";
 
-const courses = [
-  {
-    title: "LLB 2026 Target Batch: Offline",
-    rating: 4.9,
-    reviews: "34,812",
-    discount: "30% OFF",
-    batchStart: "01-Nov-2025",
-    hours: "800+",
-    target: "For Final Year Graduates",
-    bestselling: true,
-    year: "2026",
-    batchLabel: "TARGET BATCH",
-  },
-  {
-    title: "LLB 2026 Finisher Batch: Offline",
-    rating: 4.9,
-    reviews: "16,753",
-    discount: "30% OFF",
-    batchStart: "09-Dec-2025",
-    hours: "800+",
-    target: "For Droppers",
-    bestselling: true,
-    year: "2026",
-    batchLabel: "FINISHER BATCH",
-  },
-  {
-    title: "LLB 2027 Foundation Batch: Offline",
-    rating: 4.9,
-    reviews: "28,592",
-    discount: "27% OFF",
-    batchStart: "09-Dec-2025",
-    hours: "1200+",
-    target: "Expert Mentorship",
-    bestselling: false,
-    year: "2027",
-    batchLabel: "FOUNDATION BATCH",
-  },
-];
 
 const CoursesSection = () => {
   const [tab, setTab] = useState<"all" | "bestselling">("all");
@@ -150,9 +114,11 @@ const CoursesSection = () => {
                     </span>
                   </div>
                   </div>
-                <Button className="shrink-0 bg-primary text-white hover:bg-primary/90 rounded-none font-bold text-sm h-9 px-5 shadow-none">
-                  Explore Now →
-                </Button>
+                <Link to={`/course/${c.slug}`}>
+                  <Button className="shrink-0 bg-primary text-white hover:bg-primary/90 rounded-none font-bold text-sm h-9 px-5 shadow-none">
+                    Explore Now →
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           ))}
