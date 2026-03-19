@@ -53,7 +53,7 @@ const CoursePage = () => {
       </div>
 
       {/* Hero banner */}
-      <div className="bg-primary py-10 md:py-14">
+      <div className="py-10 md:py-14" style={{ backgroundColor: '#e53e3e' }}>
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-[1fr_380px] gap-8 items-start">
             <div>
