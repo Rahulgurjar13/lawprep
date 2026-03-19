@@ -17,9 +17,10 @@ const courses = ["NLSAT-LLB", "CUET PG-LLB", "MH CET", "Other"];
 interface LeadFormProps {
   onSuccess?: () => void;
   className?: string;
+  title?: string;
 }
 
-const LeadForm = ({ onSuccess, className = "" }: LeadFormProps) => {
+const LeadForm = ({ onSuccess, className = "", title = "Get Free Demo" }: LeadFormProps) => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", location: "", course: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -64,7 +65,7 @@ const LeadForm = ({ onSuccess, className = "" }: LeadFormProps) => {
         className="font-heading text-gray-900 mb-1"
         style={{ fontSize: "1.25rem", fontWeight: 900 }}
       >
-        Get Free Demo
+        {title}
       </h3>
       <p className="font-body text-sm text-gray-500 mb-5">Book a free session — no commitment, no spam</p>
 
@@ -104,7 +105,7 @@ const LeadForm = ({ onSuccess, className = "" }: LeadFormProps) => {
             <SelectTrigger className="w-full h-11 rounded-none border-gray-200 bg-white font-body focus:ring-0 focus:border-primary shadow-none text-sm text-gray-700">
               <SelectValue placeholder="You're currently in" />
             </SelectTrigger>
-            <SelectContent className="rounded-none bg-white font-body">
+            <SelectContent className="rounded-none bg-white font-body z-[1001]">
               {locations.map((l) => (
                 <SelectItem key={l} value={l} className="cursor-pointer">
                   {l}
@@ -119,7 +120,7 @@ const LeadForm = ({ onSuccess, className = "" }: LeadFormProps) => {
             <SelectTrigger className="w-full h-11 rounded-none border-gray-200 bg-white font-body focus:ring-0 focus:border-primary shadow-none text-sm text-gray-700">
               <SelectValue placeholder="Course interested in" />
             </SelectTrigger>
-            <SelectContent className="rounded-none bg-white font-body">
+            <SelectContent className="rounded-none bg-white font-body z-[1001]">
               {courses.map((c) => (
                 <SelectItem key={c} value={c} className="cursor-pointer">
                   {c}
