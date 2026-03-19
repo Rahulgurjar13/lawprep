@@ -2,6 +2,7 @@
 export const courses = [
   {
     slug: "llb-2026-target-batch",
+    image: "/images/course-target.jpg",
     title: "LLB 2026 Target Batch: Offline",
     tagline: "For Final Year Graduates appearing in 2026 entrance exams",
     rating: 4.9,
@@ -40,6 +41,7 @@ export const courses = [
   },
   {
     slug: "llb-2026-finisher-batch",
+    image: "/images/course-finisher.jpg",
     title: "LLB 2026 Finisher Batch: Offline",
     tagline: "Intensive crash course for droppers — crack it this year",
     rating: 4.9,
@@ -78,6 +80,7 @@ export const courses = [
   },
   {
     slug: "llb-2027-foundation-batch",
+    image: "/images/course-foundation.jpg",
     title: "LLB 2027 Foundation Batch: Offline",
     tagline: "Start early, build strong — 1200+ hours of comprehensive preparation",
     rating: 4.9,

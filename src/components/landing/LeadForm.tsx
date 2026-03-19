@@ -64,9 +64,9 @@ const LeadForm = ({ onSuccess, className = "" }: LeadFormProps) => {
         className="font-heading text-gray-900 mb-1"
         style={{ fontSize: "1.25rem", fontWeight: 900 }}
       >
-        Request a Callback
+        Get Free Demo
       </h3>
-      <p className="font-body text-sm text-gray-500 mb-5">Get expert guidance — absolutely free</p>
+      <p className="font-body text-sm text-gray-500 mb-5">Book a free session — no commitment, no spam</p>
 
       <form onSubmit={handleSubmit} className="space-y-3">
         <div>

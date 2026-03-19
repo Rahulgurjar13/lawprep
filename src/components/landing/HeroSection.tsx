@@ -79,9 +79,9 @@ const HeroSection = () => {
                 variant="outline"
                 className="rounded-none h-11 px-6 text-sm border-gray-300 text-gray-700 hover:border-primary hover:text-primary font-semibold shadow-none"
               >
-                <a href="tel:+919289485506" className="flex items-center gap-2">
+                <a href="tel:+91 8750581505" className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  +91-9289485506
+                  +91-8750581505
                 </a>
               </Button>
             </motion.div>

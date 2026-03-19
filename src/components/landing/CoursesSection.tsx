@@ -54,32 +54,26 @@ const CoursesSection = () => {
               transition={{ delay: i * 0.06 }}
               className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col sm:flex-row overflow-hidden"
             >
-              {/* Left red banner — sharp */}
-              <div className="bg-primary sm:w-44 md:w-48 shrink-0 p-4 flex flex-col items-center justify-center relative select-none">
-                <span
-                  className="absolute top-2 left-2 bg-accent text-gray-900 font-black px-2 py-0.5 text-[10px]"
-                  style={{ fontFamily: "Inter, sans-serif" }}
-                >
+              {/* Left thumbnail — student photo with overlay */}
+              <div className="sm:w-44 md:w-52 shrink-0 relative overflow-hidden" style={{ minHeight: "140px" }}>
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  className="w-full h-full object-cover absolute inset-0"
+                  loading="lazy"
+                />
+                {/* Subtle tint overlay so image stays vivid */}
+                <div className="absolute inset-0 bg-primary/15" />
+                {/* Discount badge */}
+                <span className="absolute top-2 left-2 bg-accent text-gray-900 font-black px-2 py-0.5 text-[10px] z-10"
+                  style={{ fontFamily: "Inter, sans-serif" }}>
                   {c.discount}
                 </span>
-                <span
-                  className="text-white text-center leading-none"
-                  style={{ fontFamily: "Nunito, sans-serif", fontWeight: 900, fontSize: "2rem" }}
-                >
-                  LLB
-                </span>
-                <span
-                  className="text-white/90 text-center uppercase mt-1"
-                  style={{ fontFamily: "Nunito, sans-serif", fontWeight: 900, fontSize: "1.1rem", letterSpacing: "0.04em" }}
-                >
-                  {c.year}
-                </span>
-                <span
-                  className="text-white/80 text-center uppercase mt-0.5"
-                  style={{ fontFamily: "Inter, sans-serif", fontWeight: 700, fontSize: "0.6rem", letterSpacing: "0.1em" }}
-                >
-                  {c.batchLabel}
-                </span>
+                {/* Batch label strip at bottom */}
+                <div className="absolute bottom-0 left-0 right-0 bg-black/50 py-1.5 px-3 z-10">
+                  <p className="text-white text-center font-black leading-tight" style={{ fontSize: "1.1rem" }}>LLB {c.year}</p>
+                  <p className="text-white/80 text-center uppercase tracking-widest" style={{ fontSize: "0.55rem", fontWeight: 700 }}>{c.batchLabel}</p>
+                </div>
               </div>
 
               {/* Right content */}
