@@ -104,7 +104,7 @@ const HeroSection = () => {
               transition={{ delay: 0.18 }}
               className="font-heading"
               style={{
-                fontSize: "clamp(1.9rem, 4vw, 3.2rem)",
+                fontSize: "clamp(2rem, 5.5vw, 3.2rem)",
                 fontWeight: 900,
                 lineHeight: 1.12,
                 letterSpacing: "-0.025em",
@@ -112,7 +112,7 @@ const HeroSection = () => {
                 textShadow: "0 2px 24px rgba(0,0,0,0.7)",
               }}
             >
-              <span className="whitespace-nowrap sm:whitespace-normal">Best 3-Year LLB Coaching</span><br className="hidden sm:block" /> in Delhi NCR
+              Best 3-Year LLB Coaching<br className="hidden sm:block" /> in Delhi NCR
             </motion.h1>
 
             {/* Description */}
@@ -225,13 +225,13 @@ const HeroSection = () => {
       </div>
 
       {/* Mobile sticky CTA */}
-      <div className="lg:hidden fixed bottom-16 left-0 right-0 z-40 px-4 pb-2 pointer-events-none">
+      <div className="lg:hidden fixed bottom-[3.5rem] left-0 right-0 z-40 px-3 pb-3 pointer-events-none">
         <Button
           onClick={() => {
             const el = document.getElementById("hero-form");
             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
           }}
-          className="w-full h-11 rounded-none bg-primary text-white text-sm font-bold shadow-md pointer-events-auto"
+          className="w-full h-12 rounded-none bg-primary text-white text-[15px] font-bold shadow-2xl pointer-events-auto"
         >
           📝 Get Free Counselling
         </Button>
