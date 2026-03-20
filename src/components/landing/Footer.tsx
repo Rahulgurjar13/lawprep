@@ -57,9 +57,9 @@ const Footer = () => {
                 { label: "Why Choose Us", href: "#why-us" },
                 { label: "Top Law Colleges", href: "#exams" },
                 { label: "Our Centers", href: "#centers" },
-                { label: "Toppers & Results", href: "#toppers" },
+                { label: "Toppers & Results", href: "#testimonials" },
                 { label: "Scholarship Programme", href: "#scholarship" },
-                { label: "Book Free Demo", href: "#demo" },
+                { label: "Book Free Demo", href: "#hero-form" },
               ].map((l) => (
                 <li key={l.label}>
                   <a

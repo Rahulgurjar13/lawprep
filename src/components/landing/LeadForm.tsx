@@ -18,9 +18,10 @@ interface LeadFormProps {
   onSuccess?: () => void;
   className?: string;
   title?: string;
+  compact?: boolean;
 }
 
-const LeadForm = ({ onSuccess, className = "", title = "Get Free Demo" }: LeadFormProps) => {
+const LeadForm = ({ onSuccess, className = "", title = "Get Free Demo", compact = false }: LeadFormProps) => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", location: "", course: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -60,14 +61,18 @@ const LeadForm = ({ onSuccess, className = "", title = "Get Free Demo" }: LeadFo
   }
 
   return (
-    <div className={`bg-white p-6 border border-gray-100 shadow-sm ${className}`} id="hero-form">
-      <h3
-        className="font-heading text-gray-900 mb-1"
-        style={{ fontSize: "1.25rem", fontWeight: 900 }}
-      >
-        {title}
-      </h3>
-      <p className="font-body text-sm text-gray-500 mb-5">Book a free session — no commitment, no spam</p>
+    <div className={`bg-white ${compact ? "" : "p-6 border border-gray-100 shadow-sm"} ${className}`} id="hero-form">
+      {!compact && (
+        <>
+          <h3
+            className="font-heading text-gray-900 mb-1"
+            style={{ fontSize: "1.25rem", fontWeight: 900 }}
+          >
+            {title}
+          </h3>
+          <p className="font-body text-sm text-gray-500 mb-5">Book a free session — no commitment, no spam</p>
+        </>
+      )}
 
       <form onSubmit={handleSubmit} className="space-y-3">
         <div>
