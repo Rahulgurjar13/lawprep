@@ -61,6 +61,9 @@ const CoursesSection = () => {
                   alt={c.title}
                   className="w-full h-full object-cover absolute inset-0"
                   loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="250"
                 />
                 {/* Subtle tint overlay so image stays vivid */}
                 <div className="absolute inset-0 bg-primary/15" />

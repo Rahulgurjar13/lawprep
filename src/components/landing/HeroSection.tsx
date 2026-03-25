@@ -57,13 +57,15 @@ const HeroSection = () => {
             transition={{ duration: 1.4, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            <img
-              src={bgSlides[slideIdx].url}
-              alt={bgSlides[slideIdx].label}
-              className="w-full h-full object-cover object-center"
-              style={{ filter: "brightness(0.82)" }}
-              loading="eager"
-            />
+              <img
+                src={bgSlides[slideIdx].url}
+                alt={bgSlides[slideIdx].label}
+                className="w-full h-full object-cover object-center"
+                style={{ filter: "brightness(0.82)" }}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
           </motion.div>
         </AnimatePresence>
 

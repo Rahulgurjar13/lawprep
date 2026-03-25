@@ -91,6 +91,10 @@ const WhyChooseUs = () => {
               src="/images/student_success.png"
               alt="Happy law student on campus"
               className="w-full h-full object-cover bg-gray-100"
+              width="350"
+              height="500"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
         </div>

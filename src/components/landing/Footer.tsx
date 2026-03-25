@@ -29,6 +29,10 @@ const Footer = () => {
               src="/images/Picture1.png"
               alt="Law Prep Tutorial"
               className="h-28 w-auto object-contain"
+              width="160"
+              height="112"
+              loading="lazy"
+              decoding="async"
             />
             <p className="font-body text-sm text-gray-400 leading-relaxed">
               India's most trusted 3-Year LLB coaching institute, guiding students

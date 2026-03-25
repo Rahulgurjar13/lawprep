@@ -124,6 +124,9 @@ const ExamsSection = () => {
                       alt={`${college.shortName} logo`}
                       className="w-full h-full object-contain"
                       loading="lazy"
+                      decoding="async"
+                      width="48"
+                      height="48"
                       onError={(e) => {
                         (e.currentTarget as HTMLImageElement).style.display = "none";
                       }}
