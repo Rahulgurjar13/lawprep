@@ -52,9 +52,9 @@ const Footer = () => {
 
           {/* Col 2 — Quick Links */}
           <div>
-            <h3 className="font-body font-bold text-xs uppercase tracking-widest border-b border-white/10 pb-3 mb-5" style={{ color: '#ffffff' }}>
+            <h4 className="font-body font-bold text-xs uppercase tracking-widest border-b border-white/10 pb-3 mb-5" style={{ color: '#ffffff' }}>
               Quick Links
-            </h3>
+            </h4>
             <ul className="space-y-3">
               {[
                 { label: "3-Year LLB Courses", href: "#courses" },
@@ -79,9 +79,9 @@ const Footer = () => {
 
           {/* Col 3 — Centers */}
           <div>
-            <h3 className="font-body font-bold text-xs uppercase tracking-widest border-b border-white/10 pb-3 mb-5" style={{ color: '#ffffff' }}>
+            <h4 className="font-body font-bold text-xs uppercase tracking-widest border-b border-white/10 pb-3 mb-5" style={{ color: '#ffffff' }}>
               Our Centers
-            </h3>
+            </h4>
             <ul className="space-y-5">
               {[
                 {
@@ -123,9 +123,9 @@ const Footer = () => {
 
           {/* Col 4 — Connect */}
           <div>
-            <h3 className="font-body font-bold text-xs uppercase tracking-widest border-b border-white/10 pb-3 mb-5" style={{ color: '#ffffff' }}>
+            <h4 className="font-body font-bold text-xs uppercase tracking-widest border-b border-white/10 pb-3 mb-5" style={{ color: '#ffffff' }}>
               Follow Us
-            </h3>
+            </h4>
             <div className="grid grid-cols-2 gap-3 mb-6">
               {/* Instagram */}
               <a href="https://www.instagram.com/lawpreptutorial_delhincr?igsh=MTY1MWIzZ3lkYXI5NQ==" target="_blank" rel="noopener noreferrer"
