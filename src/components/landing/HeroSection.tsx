@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import LeadForm from "./LeadForm";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import NPFWidget from "./NPFWidget";
 
 const trustBadges = [
   { icon: "⭐", text: "4.9 Rated" },
-  { icon: "🎯", text: "1600+ Selections" },
-  { icon: "👨‍🎓", text: "150K+ Students" },
-  { icon: "🏆", text: "6X AIR-1 Winners" },
+  { icon: "🎯", text: "500+ Selections" },
+  { icon: "👨‍🎓", text: "10k+ Students" },
 ];
 
 const bgSlides = [
@@ -22,6 +22,7 @@ const bgSlides = [
 const INTERVAL_MS = 5000;
 
 const HeroSection = () => {
+  const [formOpen, setFormOpen] = useState(false);
   const [viewers, setViewers] = useState(() => Math.floor(Math.random() * 25) + 38);
   const [slideIdx, setSlideIdx] = useState(0);
 
@@ -139,10 +140,7 @@ const HeroSection = () => {
               className="flex flex-wrap gap-3"
             >
               <Button
-                onClick={() => {
-                  const el = document.getElementById("hero-form");
-                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
+                onClick={() => setFormOpen(true)}
                 className="w-full sm:w-auto bg-primary text-white rounded-none h-12 px-7 text-sm font-bold hover:bg-primary/90 shadow-none"
               >
                 📅 Book Free Counselling
@@ -217,7 +215,7 @@ const HeroSection = () => {
             </div>
             {/* White form body */}
             <div className="bg-white px-6 py-5">
-              <LeadForm compact />
+              <NPFWidget widgetId="2813f4ab5a613222cb968f1cee3b6603" height="660px" />
             </div>
           </motion.div>
 
@@ -227,15 +225,22 @@ const HeroSection = () => {
       {/* Mobile sticky CTA */}
       <div className="lg:hidden fixed bottom-[3.5rem] left-0 right-0 z-40 px-3 pb-3 pointer-events-none">
         <Button
-          onClick={() => {
-            const el = document.getElementById("hero-form");
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
+          onClick={() => setFormOpen(true)}
           className="w-full h-12 rounded-none bg-primary text-white text-[15px] font-bold shadow-2xl pointer-events-auto"
         >
           📝 Get Free Counselling
         </Button>
       </div>
+
+      <Dialog open={formOpen} onOpenChange={setFormOpen}>
+        <DialogContent className="max-w-md max-h-[90vh] overflow-y-auto rounded-none p-0 border-none bg-transparent">
+          <DialogHeader className="sr-only">
+            <DialogTitle>Book Free Counselling</DialogTitle>
+            <DialogDescription>Please fill the form to book your free counselling session.</DialogDescription>
+          </DialogHeader>
+          <NPFWidget widgetId="2813f4ab5a613222cb968f1cee3b6603" height="660px" />
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

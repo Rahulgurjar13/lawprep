@@ -17,7 +17,7 @@ const features = [
   {
     icon: Trophy,
     title: "Top Results Every Year",
-    text: "1600+ law college selections in a single year — the highest success rate by any LLB coaching in India.",
+    text: "500+ law college selections in a single year — the highest success rate by any LLB coaching in India.",
     color: "bg-yellow-100 text-yellow-600",
   },
   {

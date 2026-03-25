@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FileText, MapPin } from "lucide-react";
+import { FileText, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const colleges = [
@@ -73,6 +74,9 @@ const exams = [
 ];
 
 const ExamsSection = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleColleges = showAll ? colleges : colleges.slice(0, 4);
+
   return (
     <section id="exams" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
@@ -100,14 +104,15 @@ const ExamsSection = () => {
         </div>
 
         {/* Universities Grid (4 cols on laptops, perfectly balanced) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 mb-16">
-          {colleges.map((college, i) => (
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5 mb-8">
+          {visibleColleges.map((college, i) => (
             <motion.div
+              layout
               key={college.name}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
+              transition={{ duration: 0.4, delay: showAll && i >= 4 ? (i - 4) * 0.08 : i * 0.05 }}
               className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-4 md:p-5 flex flex-col h-full"
             >
               <div className="flex gap-3.5 items-start mb-3.5">
@@ -152,7 +157,20 @@ const ExamsSection = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {colleges.length > 4 && (
+          <div className="flex justify-center mb-16">
+            <Button
+              variant="outline"
+              onClick={() => setShowAll(!showAll)}
+              className="rounded-none border-gray-300 text-gray-700 hover:text-primary hover:border-primary px-8 h-11 font-body text-sm font-semibold transition-colors flex items-center gap-2"
+            >
+              {showAll ? "Show Less" : "View All Colleges"}
+              {showAll ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            </Button>
+          </div>
+        )}
 
         {/* Bottom Banner: Exams Covered & CTA combined */}
         <motion.div 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import LeadForm from "./LeadForm";
+import NPFWidget from "./NPFWidget";
 
 const BrochureDownload = () => {
   const [formOpen, setFormOpen] = useState(false);
@@ -44,7 +44,7 @@ const BrochureDownload = () => {
             <DialogTitle>Download Brochure</DialogTitle>
             <DialogDescription>Please fill the form to instantly download the brochure.</DialogDescription>
           </DialogHeader>
-          <LeadForm onSuccess={handleSuccess} />
+          <NPFWidget widgetId="2813f4ab5a613222cb968f1cee3b6603" height="660px" />
         </DialogContent>
       </Dialog>
     </section>

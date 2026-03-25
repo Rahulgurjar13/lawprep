@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { courses } from "@/data/courseData";
 import { ArrowLeft, Star, Calendar, Clock, Users, MapPin, CheckCircle, BookOpen, Phone, ChevronRight, Lock, X, Unlock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import LeadForm from "@/components/landing/LeadForm";
+import NPFWidget from "@/components/landing/NPFWidget";
 import DemoCTA from "@/components/landing/DemoCTA";
 import BrochureDownload from "@/components/landing/BrochureDownload";
 import Footer from "@/components/landing/Footer";
@@ -161,7 +161,7 @@ const CoursePage = () => {
             {/* Form — desktop sticky */}
             <div id="enroll-form" className="hidden lg:block">
               <div className="bg-white shadow-lg p-1">
-                <LeadForm />
+                <NPFWidget widgetId="2813f4ab5a613222cb968f1cee3b6603" height="660px" />
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@ const CoursePage = () => {
       {/* Mobile form — shows BEFORE content on phones */}
       <div className="lg:hidden bg-white border-b border-gray-100 shadow-sm" id="enroll-form">
         <div className="container mx-auto px-4 py-6">
-          <LeadForm />
+  <NPFWidget widgetId="2813f4ab5a613222cb968f1cee3b6603" height="660px" />
         </div>
       </div>
 
@@ -260,7 +260,7 @@ const CoursePage = () => {
           {/* Right: sticky form — desktop only */}
           <div className="hidden lg:block">
             <div className="sticky top-20 bg-white border border-gray-100 shadow-sm p-1">
-              <LeadForm />
+              <NPFWidget widgetId="2813f4ab5a613222cb968f1cee3b6603" height="660px" />
             </div>
           </div>
         </div>
@@ -412,13 +412,7 @@ const CoursePage = () => {
               >
                 <X className="w-4 h-4" />
               </button>
-              <LeadForm
-                title="Check Course Fee"
-                onSuccess={() => {
-                  setModalOpen(false);
-                  setFeeRevealed(true);
-                }}
-              />
+              <NPFWidget widgetId="2813f4ab5a613222cb968f1cee3b6603" height="660px" />
             </motion.div>
           </motion.div>
         )}

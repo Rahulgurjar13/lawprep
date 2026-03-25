@@ -4,10 +4,9 @@ import { useCountUp } from "@/hooks/useCountUp";
 import { useInView } from "@/hooks/useInView";
 
 const stats = [
-  { icon: Trophy, value: 6, suffix: "X+", label: "AIR-1 Achieved" },
-  { icon: GraduationCap, value: 150, suffix: "K+", label: "Students Mentored" },
+  { icon: GraduationCap, value: 10, suffix: "k+", label: "Students Mentored" },
   { icon: FileCheck, value: 11, suffix: "K+", label: "Total Law College Selections" },
-  { icon: Star, value: 1600, suffix: "+", label: "Selections Last Year" },
+  { icon: Star, value: 500, suffix: "+", label: "Selections Last Year" },
 ];
 
 const StatCard = ({
