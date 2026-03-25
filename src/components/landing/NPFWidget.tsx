@@ -26,7 +26,18 @@ const NPFWidget = ({ height = "400px", widgetId, className = "" }: NPFWidgetProp
     
     // We intentionally DO NOT remove the script on unmount, because other forms on 
     // the page might still be using it or relying on its presence.
+
+    // Accessibility fix: dynamically add a title to the injected iframe
+    const interval = setInterval(() => {
+      const iframe = ref.current?.querySelector("iframe");
+      if (iframe && !iframe.title) {
+        iframe.title = "Admissions Enquiry Form";
+        clearInterval(interval);
+      }
+    }, 1000);
+
     return () => {
+      clearInterval(interval);
       // Cleanup is safely handled by the div unmounting itself.
     };
   }, [widgetId]);
