@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React from "react";
 
 interface NPFWidgetProps {
   height?: string;
@@ -7,37 +7,23 @@ interface NPFWidgetProps {
 }
 
 const NPFWidget = ({ height = "400px", widgetId, className = "" }: NPFWidgetProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Clear previous widget content to avoid duplication across React StrictMode or navigation
-    if (ref.current) {
-      ref.current.innerHTML = "";
-    }
-    
-    // We restore the official NoPaperForms script approach but critically REMOVE
-    // the code that deleted the script from the DOM prematurely. On Vercel,
-    // deleting the script concurrently when multiple components mounted the forms
-    // caused a race condition where the forms disappeared entirely.
-    const s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = "https://widgets.in6.nopaperforms.com/emwgts.js";
-    document.body.appendChild(s);
-    
-    // We intentionally DO NOT remove the script on unmount, because other forms on 
-    // the page might still be using it or relying on its presence.
-    return () => {
-      // Cleanup is safely handled by the div unmounting itself.
-    };
-  }, [widgetId]);
+  // A direct iframe embed completely bypasses the fragile global script injection (emwgts.js).
+  // This solves race conditions on Vercel caused by multiple widgets unmounting/mounting 
+  // concurrently and deleting each other's script tags.
+  const iframeUrl = `https://widgets.in6.nopaperforms.com/register?&r=&q=&w=${widgetId}&m=&cu=`;
 
   return (
-    <div
-      ref={ref}
-      className={`npf_wgts w-full ${className}`}
-      data-height={height}
-      data-w={widgetId}
-    />
+    <div className={`npf_wgts w-full ${className}`}>
+      <iframe
+        src={iframeUrl}
+        width="100%"
+        height={height}
+        frameBorder="0"
+        sandbox="allow-top-navigation allow-scripts allow-same-origin allow-downloads allow-forms allow-popups"
+        title="Registration Form"
+        className="w-full border-none outline-none"
+      />
+    </div>
   );
 };
 
